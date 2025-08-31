@@ -126,11 +126,176 @@
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="police-helpline-999"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/police.png"
+                  alt="Police Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">পুলিশ</h3>
+              <p class="text-sm text-gray-500 mb-2">Police</p>
+              <p class="text-3xl font-bold text-green-600">999</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('পুলিশ', '999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="fire-service-999"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/fire-service.png"
+                  alt="Fire Service Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">ফায়ার সার্ভিস</h3>
+              <p class="text-sm text-gray-500 mb-2">Fire Service</p>
+              <p class="text-3xl font-bold text-green-600">999</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('ফায়ার সার্ভিস', '999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="ambulance-service-1994999999"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/ambulance.png"
+                  alt="Ambulance Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">অ্যাম্বুলেন্স</h3>
+              <p class="text-sm text-gray-500 mb-2">স্বাস্থ্য</p>
+              <p class="text-3xl font-bold text-green-600">1994-999999</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('1994999999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('অ্যাম্বুলেন্স', '1994-999999')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="women-child-helpline-109"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/ambulance.png"
+                  alt="Women & Child Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                নারী ও শিশু সহায়তা
+              </h3>
+              <p class="text-sm text-gray-500 mb-2">Help</p>
+              <p class="text-3xl font-bold text-green-600">109</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('109')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('নারী ও শিশু সহায়তা', '109')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="anti-corruption-106"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <i class="fas fa-gavel text-4xl text-gray-700"></i>
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">দূর্নিতী</h3>
+              <p class="text-sm text-gray-500 mb-2">Anti-Corruption</p>
+              <p class="text-3xl font-bold text-green-600">106</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('106')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('দূর্নিতী', '106')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
               class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
               data-service-id="electricity-helpline-16216"
             >
@@ -233,7 +398,8 @@
             </div>
           </div>
         </div>
-         <!-- Call History Section -->
+
+        <!-- Call History Section -->
         <div class="lg:w-1/3 mt-8 lg:mt-0">
           <div class="bg-white text-black p-6 rounded-lg shadow-md">
             <div class="flex items-center justify-between mb-4">
@@ -317,6 +483,7 @@
         } else {
           favorites.push(serviceId);
         }
+
         localStorage.setItem(favoritesKey, JSON.stringify(favorites));
 
         renderFavorites();
@@ -410,30 +577,24 @@
   </body>
 </html>
 
-
 <!-- Question And Answer -->
 1) `getElementById` gets a single element by its **unique ID**.
 `getElementsByClassName` returns a **collection of elements** with a specific
 class name. `querySelector` returns the **first element** that matches a CSS
 selector, while `querySelectorAll** returns **all elements** that match the
-selector.
- 2) You create an element using `document.createElement('tagName')`.
+selector. 2) You create an element using `document.createElement('tagName')`.
 You can then insert it into the DOM using methods like
 `parentNode.appendChild(childNode)` to add it as the last child, or
 `parentNode.insertBefore(newNode, referenceNode)` to place it before a specific
-existing node. 
-3) Event bubbling == is a process where an event on a DOM element
+existing node. 3) Event bubbling == is a process where an event on a DOM element
 first triggers on the element itself and then "bubbles up" to its parent
 elements, then their parents, and so on, up to the root of the document. This
 means a click on a button inside a div will also trigger a click event on the
-div and the body.
- 4) Event delegation == is a technique where you add a single
+div and the body. 4) Event delegation == is a technique where you add a single
 event listener to a parent element instead of adding multiple listeners to each
 of its child elements. It's useful because it improves performance by reducing
 the number of event listeners, especially for dynamic content where new elements
-are added or removed.
- 5) `preventDefault()` stops the default action of an
+are added or removed. 5) `preventDefault()` stops the default action of an
 event, such as a form submission or a link's navigation. `stopPropagation()`
 prevents the event from propagating further up the DOM tree, stopping the
 **event bubbling** process.
-
