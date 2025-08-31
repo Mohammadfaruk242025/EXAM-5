@@ -130,5 +130,108 @@
         </div>
       </div>
     </div>
+    <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="electricity-helpline-16216"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <i class="fas fa-bolt text-4xl text-yellow-400"></i>
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                বিদ্যুৎ বিভ্রাট
+              </h3>
+              <p class="text-sm text-gray-500 mb-2">Electricity Outage</p>
+              <p class="text-3xl font-bold text-green-600">16216</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('16216')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('বিদ্যুৎ বিভ্রাট', '16216')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="brac-helpline-16445"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/brac.png"
+                  alt="Brac Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">ব্র্যাক</h3>
+              <p class="text-sm text-gray-500 mb-2">NGO</p>
+              <p class="text-3xl font-bold text-green-600">16445</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('16445')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('ব্র্যাক', '16445')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transition-transform transform hover:scale-105"
+              data-service-id="bd-railway-163"
+            >
+              <div class="flex items-center w-full justify-between mb-4">
+                <img
+                  src="../assets/Bangladesh-Railway.png"
+                  alt="Bangladesh Railway Icon"
+                  class="card-icon"
+                />
+                <i
+                  class="far fa-heart text-red-500 text-xl cursor-pointer"
+                  onclick="toggleFavorite(this)"
+                ></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                বাংলাদেশ রেলওয়ে
+              </h3>
+              <p class="text-sm text-gray-500 mb-2">পরিবেশ</p>
+              <p class="text-3xl font-bold text-green-600">163</p>
+              <div class="flex justify-center space-x-4 mt-4 w-full">
+                <button
+                  onclick="copyToClipboard('163')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full border border-gray-300 text-gray-600 text-sm hover:bg-gray-100 transition-colors"
+                >
+                  <span>Copy</span>
+                </button>
+                <button
+                  onclick="handleCall('বাংলাদেশ রেলওয়ে', '163')"
+                  class="flex-1 flex items-center justify-center p-2 rounded-full bg-green-500 text-white text-sm hover:bg-green-600 transition-colors"
+                >
+                  <span>Call</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
