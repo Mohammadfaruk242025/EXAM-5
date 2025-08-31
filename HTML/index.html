@@ -233,5 +233,89 @@
             </div>
           </div>
         </div>
+         <!-- Call History Section -->
+        <div class="lg:w-1/3 mt-8 lg:mt-0">
+          <div class="bg-white text-black p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Call History</h3>
+              <button
+                onclick="clearCallHistory()"
+                class="text-sm px-3 py-1 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
+              >
+                Clear
+              </button>
+            </div>
+            <div id="callHistoryList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      const historyKey = "emergencyCallHistory";
+      const favoritesKey = "emergencyFavorites";
+      const coinsKey = "emergencyCoins";
+      const callCost = 20;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loadInitialState();
+        renderHistory();
+        renderFavorites();
+      });
+
+      function loadInitialState() {
+        let coins = localStorage.getItem(coinsKey);
+        if (!coins) {
+          coins = 100;
+          localStorage.setItem(coinsKey, coins);
+        }
+        document.getElementById("coinsCount").textContent = coins;
+      }
+
+      function updateCoinsDisplay() {
+        const coins = localStorage.getItem(coinsKey);
+        document.getElementById("coinsCount").textContent = coins;
+      }
+
+      function renderFavorites() {
+        const favorites = JSON.parse(
+          localStorage.getItem(favoritesKey) || "[]"
+        );
+        document.getElementById("favoritesCount").textContent =
+          favorites.length;
+        const cards = document.querySelectorAll("[data-service-id]");
+        cards.forEach((card) => {
+          const serviceId = card.dataset.serviceId;
+          const heartContainer = card.querySelector(".fa-heart").parentNode;
+
+          if (favorites.includes(serviceId)) {
+            const img = document.createElement("img");
+            img.src = "heart.png";
+            img.alt = "Filled Heart";
+            img.className = "w-6 h-6 cursor-pointer";
+            img.onclick = (e) => toggleFavorite(e.target);
+            heartContainer.innerHTML = "";
+            heartContainer.appendChild(img);
+          } else {
+            const icon = document.createElement("i");
+            icon.className = "far fa-heart text-red-500 text-xl cursor-pointer";
+            icon.onclick = (e) => toggleFavorite(e.target);
+            heartContainer.innerHTML = "";
+            heartContainer.appendChild(icon);
+          }
+        });
+      }
+
+      function toggleFavorite(element) {
+        const card = element.closest("[data-service-id]");
+        const serviceId = card.dataset.serviceId;
+        let favorites = JSON.parse(localStorage.getItem(favoritesKey) || "[]");
+
+        if (favorites.includes(serviceId)) {
+          favorites = favorites.filter((id) => id !== serviceId);
+        } else {
+          favorites.push(serviceId);
+        }
   </body>
 </html>
