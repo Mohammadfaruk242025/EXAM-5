@@ -317,5 +317,95 @@
         } else {
           favorites.push(serviceId);
         }
+        localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+
+        renderFavorites();
+      }
+
+      function logCall(serviceTitle, number) {
+        const history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+        history.push({ serviceTitle, number, timestamp: new Date() });
+        localStorage.setItem(historyKey, JSON.stringify(history));
+        renderHistory();
+      }
+
+      function handleCall(serviceTitle, number) {
+        let coins = parseInt(localStorage.getItem(COINS_KEY), 10);
+        if (coins < callCost) {
+          showTemporaryMessage(
+            "You don't have enough coins to make this call."
+          );
+          return;
+        }
+
+        coins -= callCost;
+        localStorage.setItem(COINS_KEY, coins);
+        updateCoinsDisplay();
+        logCall(serviceTitle, number);
+        showTemporaryMessage(`Calling ${serviceTitle} at ${number}`);
+      }
+
+      function clearCallHistory() {
+        localStorage.removeItem(historyKey);
+        renderHistory();
+        showTemporaryMessage("Call history cleared.");
+      }
+
+      function copyToClipboard(number) {
+        navigator.clipboard
+          .writeText(number)
+          .then(() => {
+            showTemporaryMessage("Number Copied!");
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      }
+
+      function showTemporaryMessage(message) {
+        const messageBox = document.createElement("div");
+        messageBox.className =
+          "fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-md shadow-lg transition-opacity duration-300 opacity-0 z-50";
+        messageBox.textContent = message;
+        document.body.appendChild(messageBox);
+        setTimeout(() => {
+          messageBox.style.opacity = "1";
+        }, 10);
+        setTimeout(() => {
+          messageBox.style.opacity = "0";
+          setTimeout(() => messageBox.remove(), 300);
+        }, 2000);
+      }
+
+      function renderHistory() {
+        const history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+        const historyList = document.getElementById("callHistoryList");
+        historyList.innerHTML = "";
+
+        if (history.length === 0) {
+          historyList.innerHTML =
+            '<p class="text-center text-gray-300 italic">No calls made yet.</p>';
+          return;
+        }
+
+        history
+          .slice(-5)
+          .reverse()
+          .forEach((item) => {
+            const formattedTime = new Date(item.timestamp).toLocaleTimeString();
+            const historyItem = document.createElement("div");
+            historyItem.className =
+              "bg-grey-800 p-3 rounded-md mb-2 flex justify-between items-center";
+            historyItem.innerHTML = `
+                    <div>
+                        <p class="font-semibold text-sm">${item.serviceTitle}</p>
+                        <p class="text-xs text-green-200">${item.number}</p>
+                    </div>
+                    <span class="text-sm font-bold">${formattedTime}</span>
+                `;
+            historyList.appendChild(historyItem);
+          });
+      }
+    </script>
   </body>
 </html>
