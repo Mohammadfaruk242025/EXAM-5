@@ -578,23 +578,28 @@
 </html>
 
 <!-- Question And Answer -->
-1) `getElementById` gets a single element by its **unique ID**.
+
+<!-- 1) `getElementById` gets a single element by its **unique ID**.
 `getElementsByClassName` returns a **collection of elements** with a specific
 class name. `querySelector` returns the **first element** that matches a CSS
 selector, while `querySelectorAll** returns **all elements** that match the
-selector. 2) You create an element using `document.createElement('tagName')`.
+selector. 
+2) You create an element using `document.createElement('tagName')`.
 You can then insert it into the DOM using methods like
 `parentNode.appendChild(childNode)` to add it as the last child, or
 `parentNode.insertBefore(newNode, referenceNode)` to place it before a specific
-existing node. 3) Event bubbling == is a process where an event on a DOM element
+existing node.
+ 3) Event bubbling == is a process where an event on a DOM element
 first triggers on the element itself and then "bubbles up" to its parent
 elements, then their parents, and so on, up to the root of the document. This
 means a click on a button inside a div will also trigger a click event on the
-div and the body. 4) Event delegation == is a technique where you add a single
+div and the body. 
+4) Event delegation == is a technique where you add a single
 event listener to a parent element instead of adding multiple listeners to each
 of its child elements. It's useful because it improves performance by reducing
 the number of event listeners, especially for dynamic content where new elements
-are added or removed. 5) `preventDefault()` stops the default action of an
+are added or removed. 
+5) `preventDefault()` stops the default action of an
 event, such as a form submission or a link's navigation. `stopPropagation()`
 prevents the event from propagating further up the DOM tree, stopping the
-**event bubbling** process.
+**event bubbling** process. -->
